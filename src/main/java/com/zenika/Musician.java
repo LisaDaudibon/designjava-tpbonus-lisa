@@ -1,19 +1,15 @@
 package com.zenika;
 
 public abstract class Musician {
-    String name;
-    String instrument;
-    public Musician( String instrument, String name ) {
+    private final String name;
+    private final String instrument;
+    public Musician( String name, String instrument ) {
         this.name = name;
         this.instrument = instrument;
     }
 
     public void play () {
-
+        System.out.printf("Le %s %s joue de la %s \n", getClass().getSimpleName(), this.name, this.instrument);
     }
 
-    @Override
-    public String toString () {
-     return String.format("Le %s %s joue %s", getClass().getSimpleName(), this.name, this.instrument);
-    }
 }
