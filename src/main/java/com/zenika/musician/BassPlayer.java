@@ -1,6 +1,6 @@
-package com.zenika;
+package com.zenika.musician;
 
-public class BassPlayer extends Musician{
+public class BassPlayer extends Musician {
     public BassPlayer ( String name ) {
         super (name, "bass");
     }
