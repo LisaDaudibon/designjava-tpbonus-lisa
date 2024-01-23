@@ -1,17 +1,35 @@
 package com.zenika;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public abstract class Musician {
     private final String name;
     private final String instrument;
+    private final Set<MusicTypes> musicTypes = new HashSet<>();
+
     public Musician( String name, String instrument ) {
         this.name = name;
         this.instrument = instrument;
     }
+    public Musician(String name, String instrument, ArrayList<MusicTypes> musicTypes) {
+        this.name = name;
+        this.instrument = instrument;
+        this.musicTypes.addAll(musicTypes);
+    }
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<MusicTypes> getMusicTypes() {
+        return new ArrayList<>(musicTypes);
+    }
+
+    public void learnStyle(MusicTypes musicTypes) {
+        this.musicTypes.add(musicTypes);
     }
 
     public void play () {
