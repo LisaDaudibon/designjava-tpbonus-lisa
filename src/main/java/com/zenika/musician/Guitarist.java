@@ -1,4 +1,4 @@
-package com.zenika;
+package com.zenika.musician;
 
 public class Guitarist extends Musician implements Singer {
 
@@ -7,7 +7,7 @@ public class Guitarist extends Musician implements Singer {
     }
 
     @Override
-    public void Sing() {
+    public void sing() {
         System.out.printf("The %s %s sings while playing like a champ !", getClass().getSimpleName(), this.getName());
     }
 }
