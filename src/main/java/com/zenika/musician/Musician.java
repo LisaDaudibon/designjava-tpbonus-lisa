@@ -1,4 +1,4 @@
-package com.zenika;
+package com.zenika.musician;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -37,15 +37,15 @@ public abstract class Musician {
     }
 
     @Override
-    public boolean equals(Object objectToCompare) {
-        if (Objects.nonNull(objectToCompare)) {
-            return this.getClass().equals(objectToCompare.getClass());
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Musician musician = (Musician) o;
+        return Objects.equals(instrument, musician.instrument);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getClass());
+        return Objects.hash(instrument);
     }
 }
